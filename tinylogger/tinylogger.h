@@ -60,7 +60,7 @@ namespace tlog {
     template <typename T>
     std::string durationToString(T dur) {
         using namespace std::chrono;
-        using day_t = duration<long long, std::ratio<3600 * 24>>;
+        using day_t = duration<long long, std::ratio<1000 * 3600 * 24>>;
 
         auto d = duration_cast<day_t>(dur);
         auto h = duration_cast<hours>(dur -= d);
