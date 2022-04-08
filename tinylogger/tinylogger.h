@@ -87,9 +87,11 @@ namespace tlog {
                 padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
                 padFromLeft(std::to_string(ms.count()), 3, '0') + std::string("ms");
         } else if (s.count() > 0) {
+            return
                 std::to_string(s.count()) + 's' +
                 padFromLeft(std::to_string(ms.count()), 3, '0') + std::string("ms");
         } else {
+            return
                 std::to_string(ms.count()) + std::string("ms");
         }
     }
