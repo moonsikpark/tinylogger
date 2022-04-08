@@ -66,24 +66,31 @@ namespace tlog {
         auto h = duration_cast<hours>(dur -= d);
         auto m = duration_cast<minutes>(dur -= h);
         auto s = duration_cast<seconds>(dur -= m);
+        auto ms = duration_cast<miliseconds>(dur -= s);
 
         if (d.count() > 0) {
             return
                 std::to_string(d.count()) + 'd' +
                 padFromLeft(std::to_string(h.count()), 2, '0') + 'h' +
                 padFromLeft(std::to_string(m.count()), 2, '0') + 'm' +
-                padFromLeft(std::to_string(s.count()), 2, '0') + 's';
+                padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
+                padFromLeft(std::to_string(ms.count()), 3, '0') + 'ms';
         } else if (h.count() > 0) {
             return
                 std::to_string(h.count()) + 'h' +
                 padFromLeft(std::to_string(m.count()), 2, '0') + 'm' +
-                padFromLeft(std::to_string(s.count()), 2, '0') + 's';
+                padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
+                padFromLeft(std::to_string(ms.count()), 3, '0') + 'ms';
         } else if (m.count() > 0) {
             return
                 std::to_string(m.count()) + 'm' +
-                padFromLeft(std::to_string(s.count()), 2, '0') + 's';
+                padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
+                padFromLeft(std::to_string(ms.count()), 3, '0') + 'ms';
+        } else if (s.count() > 0) {
+                std::to_string(s.count()) + 's' +
+                padFromLeft(std::to_string(ms.count()), 3, '0') + 'ms';
         } else {
-            return std::to_string(s.count()) + 's';
+                std::to_string(ms.count()) + 'ms';
         }
     }
 
