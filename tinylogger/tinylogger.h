@@ -66,7 +66,7 @@ namespace tlog {
         auto h = duration_cast<hours>(dur -= d);
         auto m = duration_cast<minutes>(dur -= h);
         auto s = duration_cast<seconds>(dur -= m);
-        auto ms = duration_cast<miliseconds>(dur -= s);
+        auto ms = duration_cast<milliseconds>(dur -= s);
 
         if (d.count() > 0) {
             return
