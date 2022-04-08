@@ -74,21 +74,21 @@ namespace tlog {
                 padFromLeft(std::to_string(h.count()), 2, '0') + 'h' +
                 padFromLeft(std::to_string(m.count()), 2, '0') + 'm' +
                 padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
-                padFromLeft(std::to_string(ms.count()), 3, '0') + std::to_string("ms");
+                padFromLeft(std::to_string(ms.count()), 3, '0') + std::string("ms");
         } else if (h.count() > 0) {
             return
                 std::to_string(h.count()) + 'h' +
                 padFromLeft(std::to_string(m.count()), 2, '0') + 'm' +
                 padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
-                padFromLeft(std::to_string(ms.count()), 3, '0') + std::to_string("ms");
+                padFromLeft(std::to_string(ms.count()), 3, '0') + std::string("ms");
         } else if (m.count() > 0) {
             return
                 std::to_string(m.count()) + 'm' +
                 padFromLeft(std::to_string(s.count()), 2, '0') + 's' +
-                padFromLeft(std::to_string(ms.count()), 3, '0') + std::to_string("ms");
+                padFromLeft(std::to_string(ms.count()), 3, '0') + std::string("ms");
         } else if (s.count() > 0) {
                 std::to_string(s.count()) + 's' +
-                padFromLeft(std::to_string(ms.count()), 3, '0') + std::to_string("ms");
+                padFromLeft(std::to_string(ms.count()), 3, '0') + std::string("ms");
         } else {
                 std::to_string(ms.count()) + std::to_string("ms");
         }
